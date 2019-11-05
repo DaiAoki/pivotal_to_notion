@@ -8,7 +8,7 @@
    `iteration_stories_report_OCT24_OCT30.csv` のような名称のファイルがダウンロードされる
 2. 上記のファイルを `path/to/pivotal_to_notion` に移動する
 3. 下記コマンドを実行する
-	`extract_iteration_stories_report_OCT24_OCT30.csv` のような名称のファイルが生成される
+   `extract_iteration_stories_report_OCT24_OCT30.csv` のような名称のファイルが生成される
 ```
 # execute
 ./convert_csv_format_from_pivotal_tracker_to_notion.rb andhatch_20191031_1622.csv

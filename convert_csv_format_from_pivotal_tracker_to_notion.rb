@@ -21,7 +21,15 @@ File.open("extract_#{ARGV[0]}", 'w') do |file|
   file.write(header)
   rows = CSV.read(ARGV[0], headers: true)
   rows.each do |row|
-    extracted_row = [ "#{row['Type']} | #{row['Title']}", "Dai Aoki", row["State"] ].join(",") + "\n"
+    type = row["Type"]
+    name = if type == "feature"
+             "#{row['Type']}(#{row['Estimate']}pt) | #{row['Title']}"
+           else
+             "#{row['Type']} | #{row['Title']}"
+           end
+    assign = row["Owned By"]
+    status = row["Current State"]
+    extracted_row = [ name, assign, status ].join(",") + "\n"
     file.write(extracted_row)
   end
 end
